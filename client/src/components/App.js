@@ -9,7 +9,7 @@ import StreamShow from './streams/StreamShow'
 import Header from './Header'
 
 const App = () =>{
-  return(<div>
+  return(<div className='ui container'>
       <Router>
       <Header/>
         <div>
