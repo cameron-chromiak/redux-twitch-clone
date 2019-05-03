@@ -33,7 +33,7 @@ export const fetchStreams = () => async dispatch => {
   })
 }
 
-export const fetchSream = (id) => async dispatch=>{
+export const fetchStream = (id) => async dispatch=>{
   const res = await streams.get(`/streams/${id}`)
   dispatch({
     type: FETCH_STREAM,
@@ -41,7 +41,7 @@ export const fetchSream = (id) => async dispatch=>{
   })
 }
 
-const editStream = (id, formValues) => async dispatch => {
+export const editStream = (id, formValues) => async dispatch => {
   const res = await streams.put(`/streams/${id}`, formValues)
   dispatch({
     type: EDIT_STREAM,
@@ -49,7 +49,7 @@ const editStream = (id, formValues) => async dispatch => {
   })
 }
 
-const deleteStream = (id) => async dispatch =>{
+export const deleteStream = (id) => async dispatch =>{
   await streams.delete(`/streams/${id}`)
 
   dispatch({
