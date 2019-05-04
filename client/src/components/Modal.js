@@ -5,13 +5,13 @@ import history from '../history'
 const Modal = props =>{
 
   return ReactDOM.createPortal(
-    <div onClick={() => history.push('/')} className='ui dimmer modals visible active'>
+    <div onClick={props.onDismiss} className='ui dimmer modals visible active'>
       <div onClick={(e) => e.stopPropagation()} className='ui standard modal visible active'>
-          <div class="header">{props.title}</div>
-            <div class="content">
+          <div className="header">{props.title}</div>
+            <div className="content">
               <p>{props.content}</p>
             </div>
-          <div class="actions">
+          <div className="actions">
             {props.actions}
           </div>
         </div>
@@ -21,3 +21,6 @@ const Modal = props =>{
 }
 
 export default Modal
+
+//takes in props for onClick, title, content and actions
+//actions could be a div w/ buttons
